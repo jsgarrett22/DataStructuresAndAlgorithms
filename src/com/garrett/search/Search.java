@@ -17,7 +17,22 @@ public class Search {
 		return -1;
 	}
 	
-	public static int BinarySearch(int[] sortedArray) {
+	public static int BinarySearch(int[] sortedArray, int target) {
+		int left = 0;
+		int right = sortedArray.length - 1;
+		
+		while (left <= right) {
+			int midpoint = (left + right) / 2;
+			
+			if (sortedArray[midpoint] == target) {
+				return midpoint;
+			} else if (sortedArray[midpoint] < target) {
+				left = midpoint + 1;
+			} else {
+				right = midpoint - 1;
+			}
+		}
+		
 		return -1;
 	}
 }

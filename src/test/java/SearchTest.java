@@ -30,7 +30,10 @@ class SearchTest {
 
 	@Test
 	void testBinarySearch() {
-		fail("Not yet implemented");
+		int[] testArray = {1, 2, 3, 4, 5, 8, 9, 10};
+		assertEquals(-1, Search.BinarySearch(testArray, -1));
+		assertEquals(3, Search.BinarySearch(testArray, 4));
+		assertEquals(7, Search.BinarySearch(testArray, 10));
 	}
 
 }
