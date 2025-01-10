@@ -1,10 +1,11 @@
 package com.garrett;
 
+import com.garrett.search.Search;
+
 public class main {
 
 	public static void main(String[] args) {
-		String myName = "Joshua S. Garrett";
-		System.out.println(main.reverseString(myName));
+		
 	}
 	
 	public static String reverseString(String str) {
