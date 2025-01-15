@@ -63,5 +63,35 @@ public class Sort {
 		
 		return arrayToSort;
 	}
+	
+	/**
+	 * Sorts an array of ints using the selection sort algorithm in ascending order.
+	 * @param array the array to be sorted.
+	 * @return the sorted array.
+	 */
+	public static int[] SelectionSort(int[] array) {
+		int[] arrayToSort = array;
+		int size = arrayToSort.length;
+		int temp = 0;
+		int minIndex = -1;
+		
+		for (int i = 0; i < size - 1; i++) {
+			minIndex = i;
+			// find the minimum value each iteration
+			for (int j = i + 1; j < size; j++) {
+				// if i > i + 1
+				if (arrayToSort[minIndex] > arrayToSort[j]) {
+					minIndex = j;
+				}
+			}
+			// swap that minimum value with i before incrementing i by 1, in ascending order
+			// from smallest to greatest
+			temp = arrayToSort[minIndex];
+			arrayToSort[minIndex] = arrayToSort[i];
+			arrayToSort[i] = temp;
+		}
+		
+		return array;
+	}
 
 }

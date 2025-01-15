@@ -53,5 +53,19 @@ class SortTest {
 		int[] expected2 = {12, 9, 5, 5, 3, 2, 2, 2, 2};
 		assertArrayEquals(expected2, Sort.BubbleSort(unsorted2, 1));
 	}
+	
+	/**
+	 * Tests the selection sort algorithm in default, ascending order
+	 */
+	@Test
+	void testSelectionSort() {
+		int[] unsorted = {9, 12, 5, 14, 51, 94};
+		int[] expected = {5, 9, 12, 14, 51, 94};
+		assertArrayEquals(expected, Sort.SelectionSort(unsorted));
+		
+		int[] unsorted2 = {9, 3, 2, 2, 5, 2, 5, 2, 12};
+		int[] expected2 = {2, 2, 2, 2, 3, 5, 5, 9, 12};
+		assertArrayEquals(expected2, Sort.SelectionSort(unsorted2));
+	}
 
 }
