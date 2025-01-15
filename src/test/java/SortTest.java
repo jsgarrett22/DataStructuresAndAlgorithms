@@ -67,5 +67,35 @@ class SortTest {
 		int[] expected2 = {2, 2, 2, 2, 3, 5, 5, 9, 12};
 		assertArrayEquals(expected2, Sort.SelectionSort(unsorted2));
 	}
+	
+	/**
+	 * Tests the selection sort algorithm given a particular parameter that reflects
+	 * ascending order (x = 0).
+	 */
+	@Test
+	void testSelectionSortAscending() {
+		int[] unsorted = {9, 12, 5, 14, 51, 94};
+		int[] expected = {5, 9, 12, 14, 51, 94};
+		assertArrayEquals(expected, Sort.SelectionSort(unsorted, 0));
+		
+		int[] unsorted2 = {9, 3, 2, 2, 5, 2, 5, 2, 12};
+		int[] expected2 = {2, 2, 2, 2, 3, 5, 5, 9, 12};
+		assertArrayEquals(expected2, Sort.SelectionSort(unsorted2, 0));
+	}
+	
+	/**
+	 * Tests the selection sort algorithm given a particular parameter that reflects
+	 * descending order (x != 0).
+	 */
+	@Test
+	void testSelectionSortDescending() {
+		int[] unsorted = {9, 12, 5, 14, 51, 94};
+		int[] expected = {94, 51, 14, 12, 9, 5};
+		assertArrayEquals(expected, Sort.SelectionSort(unsorted, 1));
+		
+		int[] unsorted2 = {9, 3, 2, 2, 5, 2, 5, 2, 12};
+		int[] expected2 = {12, 9, 5, 5, 3, 2, 2, 2, 2};
+		assertArrayEquals(expected2, Sort.SelectionSort(unsorted2, 1));
+	}
 
 }

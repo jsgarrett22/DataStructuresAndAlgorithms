@@ -93,5 +93,56 @@ public class Sort {
 		
 		return array;
 	}
+	
+	/**
+	 * Sorts an array of ints using the selection sort algorithm in either ascending 
+	 * or descending order based on a given parameter for x.
+	 * @param array the array to be sorted.
+	 * @param x (x = 0 -> ascending, otherwise, descending)
+	 * @return the sorted array.
+	 */
+	public static int[] SelectionSort(int[] array, int x) {
+		int[] arrayToSort = array;
+		int size = arrayToSort.length;
+		int temp = 0;
+		int minIndex = -1;
+		
+		// ASCENDING
+		if (x == 0) {
+			for (int i = 0; i < size - 1; i++) {
+				minIndex = i;
+				// find the minimum value each iteration
+				for (int j = i + 1; j < size; j++) {
+					// if i > i + 1
+					if (arrayToSort[minIndex] > arrayToSort[j]) {
+						minIndex = j;
+					}
+				}
+				// swap that minimum value with i before incrementing i by 1, in ascending order
+				// from smallest to greatest
+				temp = arrayToSort[minIndex];
+				arrayToSort[minIndex] = arrayToSort[i];
+				arrayToSort[i] = temp;
+			}
+		} else { // DESCENDING
+			for (int i = 0; i < size - 1; i++) {
+				minIndex = i;
+				// find the maximum value each iteration
+				for (int j = i + 1; j < size; j++) {
+					// if i > i + 1
+					if (arrayToSort[minIndex] < arrayToSort[j]) {
+						minIndex = j;
+					}
+				}
+				// swap that maximum value with i before incrementing i by 1, in descending order
+				// from greatest to smallest
+				temp = arrayToSort[minIndex];
+				arrayToSort[minIndex] = arrayToSort[i];
+				arrayToSort[i] = temp;
+			}
+		}
+		
+		return array;
+	}
 
 }
