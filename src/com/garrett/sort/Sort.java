@@ -160,6 +160,33 @@ public class Sort {
 	}
 	
 	/**
+	 * Sorts an array of ints using the insertion sort algorithm in ascending order.
+	 * @param array the array to be sorted.
+	 * @return the sorted array.
+	 */
+	public static int[] InsertionSort(int[] array) {
+		
+		// for each array element from 1 to length - 1
+			// insert element at nextPos where it belongs in the array, increasing the length
+			// of the sorted subarray by 1 element
+			// while nextPos >= 0 and the element at nextPos - 1 > nextVal
+				// shift element at nextPos - 1 to position nextPos
+				// decrement nextPos by 1
+			// insert nextVal at nextPos
+		
+		for (int i = 1; i < array.length; i++) {
+			int key = array[i];
+			int j = i - 1;
+			while (j >= 0 && array[j] > key) {
+				array[j+1] = array[j];		// shift j to i
+				j--;
+			}
+			array[j + 1] = key;
+		}
+		return array;
+	}
+	
+	/**
 	 * Utility method to print an array to console.
 	 * @param array the array to print to console
 	 */
