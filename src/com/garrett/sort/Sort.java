@@ -88,12 +88,13 @@ public class Sort {
 					numOfComparisons++;
 				}
 			}
-			// swap that minimum value with i before incrementing i by 1, in ascending order
-			// from smallest to greatest
-			temp = arrayToSort[minIndex];
-			arrayToSort[minIndex] = arrayToSort[i];
-			arrayToSort[i] = temp;
-			numOfExchanges++;
+			// exchange only if the values are different
+			if (arrayToSort[minIndex] != arrayToSort[i]) {
+				temp = arrayToSort[minIndex];
+				arrayToSort[minIndex] = arrayToSort[i];
+				arrayToSort[i] = temp;
+				numOfExchanges++;
+			}
 			
 			// PRINT TO CONSOLE
 			System.out.print("[" + i + "]: ");
