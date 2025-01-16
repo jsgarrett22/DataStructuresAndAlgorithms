@@ -70,6 +70,9 @@ public class Sort {
 	 * @return the sorted array.
 	 */
 	public static int[] SelectionSort(int[] array) {
+		int numOfPasses = 0;
+		int numOfComparisons = 0;
+		int numOfExchanges = 0;
 		int[] arrayToSort = array;
 		int size = arrayToSort.length;
 		int temp = 0;
@@ -89,8 +92,11 @@ public class Sort {
 			temp = arrayToSort[minIndex];
 			arrayToSort[minIndex] = arrayToSort[i];
 			arrayToSort[i] = temp;
+			
+			// PRINT TO CONSOLE
+			System.out.print("[" + i + "]: ");
+			printArray(arrayToSort);
 		}
-		
 		return array;
 	}
 	
@@ -143,6 +149,17 @@ public class Sort {
 		}
 		
 		return array;
+	}
+	
+	/**
+	 * Utility method to print an array to console.
+	 * @param array the array to print to console
+	 */
+	private static void printArray(int[] array) {
+		for (int i : array) {
+			System.out.print(i + " ");
+		}
+		System.out.println();
 	}
 
 }
