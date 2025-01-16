@@ -111,5 +111,21 @@ class SortTest {
 		int[] expected2 = {12, 9, 5, 5, 3, 2, 2, 2, 2};
 		assertArrayEquals(expected2, Sort.SelectionSort(unsorted2, 1));
 	}
+	
+	/**
+	 * Tests the insertion sort algorithm in default, ascending order
+	 */
+	@Test
+	void testInsertionSort() {
+		int[] unsorted = {30, 25, 15, 20, 28};
+		int[] expected = {15, 20, 25, 28, 30};
+		assertArrayEquals(expected, Sort.InsertionSort(unsorted));
+		
+		int[] unsorted2 = {40, 35, 80, 75, 60, 90, 70, 75, 50, 22};
+		int[] expected2 = {22, 35, 40, 50, 60, 70, 75, 75, 80, 90};
+		assertArrayEquals(expected2, Sort.InsertionSort(unsorted2));
+	}
+	
+	
 
 }

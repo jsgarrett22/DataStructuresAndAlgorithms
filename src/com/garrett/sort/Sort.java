@@ -155,6 +155,55 @@ public class Sort {
 				arrayToSort[i] = temp;
 			}
 		}
+		return array;
+	}
+	
+	/**
+	 * Sorts an array of ints using the insertion sort algorithm in ascending order.
+	 * @param array the array to be sorted.
+	 * @return the sorted array.
+	 */
+	public static int[] InsertionSort(int[] array) {
+		
+		// for each array element from 1 to length - 1
+			// nextPos = array[i]
+			// prevPos = i - 1;
+			// insert element at nextPos where it belongs in the array by comparing nextPos
+			// with prevPos.
+			// while nextPos - 1 >= 0 and the element at nextPos - 1 > nextVal
+				// shift element at nextPos - 1 to position nextPos
+				// decrement nextPos by 1
+			// insert nextVal at nextPos
+		
+		int numOfPasses = 0;
+		int numOfComparisons = 0;
+		int numOfExchanges = 0;
+		
+		// print unsorted array
+		System.out.print("Unsorted: ");
+		printArray(array);
+		
+		for (int i = 1; i < array.length; i++) {
+			int key = array[i];
+			int j = i - 1;
+			while (j >= 0 && array[j] > key) {
+				numOfComparisons++;
+				array[j+1] = array[j];		// shift j to i
+				j--;
+			}
+			array[j + 1] = key;
+			numOfExchanges++;
+			numOfPasses++;
+			
+			// print array
+			printArray(array);
+		}
+		
+		// print stats
+		// PRINT STATS TO CONSOLE
+		System.out.println("Number of Passes: " + numOfPasses + "\n" + 
+							"Number of Comparisons: " + numOfComparisons + "\n" +
+							"Number of Exchanges: " + numOfExchanges + "\n");
 		
 		return array;
 	}
