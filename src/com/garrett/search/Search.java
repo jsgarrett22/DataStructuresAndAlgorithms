@@ -22,7 +22,7 @@ public class Search {
 		int right = sortedArray.length - 1;
 		
 		while (left <= right) {
-			int midpoint = (left + right) / 2;
+			int midpoint = left + right / 2;
 			
 			if (sortedArray[midpoint] == target) {
 				return midpoint;
@@ -33,6 +33,22 @@ public class Search {
 			}
 		}
 		
+		return -1;
+	}
+	
+	public static int BinarySearch(int[] sortedArray, int target, int left, int right) {
+		
+		if (left <= right) {
+			int midpoint = (left + right) / 2;
+			
+			if (sortedArray[midpoint] == target) {
+				return midpoint;
+			} else if (sortedArray[midpoint] < target) {
+				return BinarySearch(sortedArray, target, midpoint + 1, right);
+			} else {
+				return BinarySearch(sortedArray, target, left, midpoint - 1);
+			}
+		}
 		return -1;
 	}
 }
