@@ -70,6 +70,9 @@ public class Sort {
 	 * @return the sorted array.
 	 */
 	public static int[] SelectionSort(int[] array) {
+		int numOfPasses = 0;
+		int numOfComparisons = 0;
+		int numOfExchanges = 0;
 		int[] arrayToSort = array;
 		int size = arrayToSort.length;
 		int temp = 0;
@@ -82,15 +85,26 @@ public class Sort {
 				// if i > i + 1
 				if (arrayToSort[minIndex] > arrayToSort[j]) {
 					minIndex = j;
+					numOfComparisons++;
 				}
 			}
-			// swap that minimum value with i before incrementing i by 1, in ascending order
-			// from smallest to greatest
-			temp = arrayToSort[minIndex];
-			arrayToSort[minIndex] = arrayToSort[i];
-			arrayToSort[i] = temp;
+			// exchange only if the values are different
+			if (arrayToSort[minIndex] != arrayToSort[i]) {
+				temp = arrayToSort[minIndex];
+				arrayToSort[minIndex] = arrayToSort[i];
+				arrayToSort[i] = temp;
+				numOfExchanges++;
+			}
+			
+			// PRINT TO CONSOLE
+			System.out.print("[" + i + "]: ");
+			printArray(arrayToSort);
+			numOfPasses++;
 		}
-		
+		// PRINT STATS TO CONSOLE
+		System.out.println("Number of Passes: " + numOfPasses + "\n" + 
+						"Number of Comparisons: " + numOfComparisons + "\n" +
+						"Number of Exchanges: " + numOfExchanges + "\n");
 		return array;
 	}
 	
@@ -143,6 +157,17 @@ public class Sort {
 		}
 		
 		return array;
+	}
+	
+	/**
+	 * Utility method to print an array to console.
+	 * @param array the array to print to console
+	 */
+	private static void printArray(int[] array) {
+		for (int i : array) {
+			System.out.print(i + " ");
+		}
+		System.out.println();
 	}
 
 }

@@ -66,6 +66,20 @@ class SortTest {
 		int[] unsorted2 = {9, 3, 2, 2, 5, 2, 5, 2, 12};
 		int[] expected2 = {2, 2, 2, 2, 3, 5, 5, 9, 12};
 		assertArrayEquals(expected2, Sort.SelectionSort(unsorted2));
+		
+		int[] unsorted3 = {40, 35, 80, 75, 60, 90, 70, 75, 50, 22};
+		int[] expected3 = {22, 35, 40, 50, 60, 70, 75, 75, 80, 90};
+	}
+	
+	/**
+	 * Tests the number of passes, comparisons, and exchanges that are performed.
+	 */
+	@Test
+	void testSelectionSortStats() {
+		int[] unsorted = {40, 35, 80, 75, 60, 90, 70, 75, 50, 22};
+		int[] expected = {22, 35, 40, 50, 60, 70, 75, 75, 80, 90};
+		
+		assertArrayEquals(expected, Sort.SelectionSort(unsorted));
 	}
 	
 	/**
