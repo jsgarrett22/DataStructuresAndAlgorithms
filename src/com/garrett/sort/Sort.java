@@ -85,6 +85,7 @@ public class Sort {
 				// if i > i + 1
 				if (arrayToSort[minIndex] > arrayToSort[j]) {
 					minIndex = j;
+					numOfComparisons++;
 				}
 			}
 			// swap that minimum value with i before incrementing i by 1, in ascending order
@@ -92,11 +93,17 @@ public class Sort {
 			temp = arrayToSort[minIndex];
 			arrayToSort[minIndex] = arrayToSort[i];
 			arrayToSort[i] = temp;
+			numOfExchanges++;
 			
 			// PRINT TO CONSOLE
 			System.out.print("[" + i + "]: ");
 			printArray(arrayToSort);
+			numOfPasses++;
 		}
+		// PRINT STATS TO CONSOLE
+		System.out.println("Number of Passes: " + numOfPasses + "\n" + 
+						"Number of Comparisons: " + numOfComparisons + "\n" +
+						"Number of Exchanges: " + numOfExchanges + "\n");
 		return array;
 	}
 	
