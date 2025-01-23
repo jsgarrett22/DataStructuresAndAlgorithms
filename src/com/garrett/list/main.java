@@ -1,4 +1,4 @@
-package com.garrett;
+package com.garrett.list;
 
 import com.garrett.search.Search;
 
