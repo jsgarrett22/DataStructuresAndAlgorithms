@@ -23,17 +23,8 @@ class LinkedListTest {
 		assertEquals(1, list.size());
 		assertEquals(5, list.getFirst());
 		// add second value of 7
-		assertTrue(list.add(7));
+		assertTrue(list.add(9));
 		assertEquals(2, list.size());
-		assertEquals(5, list.getFirst());
-	}
-	
-	@Test
-	void addFirstTest() {
-		LinkedList list = new LinkedList();
-		// add first value of 5
-		list.addFirst(5);
-		assertEquals(1, list.size());
 		assertEquals(5, list.getFirst());
 	}
 	

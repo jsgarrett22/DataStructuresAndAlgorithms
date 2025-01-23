@@ -5,7 +5,13 @@ import com.garrett.search.Search;
 public class main {
 
 	public static void main(String[] args) {
-		
+		LinkedList list = new LinkedList();
+		list.add(5);
+		list.add(7);
+		list.add(9);
+		list.add(11);
+		list.add(13);
+		list.display();
 	}
 	
 	public static String reverseString(String str) {

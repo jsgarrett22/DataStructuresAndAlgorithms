@@ -21,19 +21,43 @@ public class LinkedList {
 	 */
 	public boolean add(int value) {
 		Node node = new Node(value);
+		Node current = head;
 		if (head == null) {
-			addFirst(node.data);
+			head = node;
+			size++;
+		} else {
+			while (current.next != null) {
+				current = current.next;
+			}
+			current.next = node;
+			size++;
 		}
+		
 		return true;
 	}
 	
-	/**
-	 * Adds an element to the head of the list.
-	 */
-	public void addFirst(int value) {
+	/*
+	 * PRIVATE HELPER METHODS taken from 
+	 * 
+	private void addFirst(int value) {
 		head = new Node(value, head);
 		size++;
 	}
+	
+	private void addAfter(Node node, int value) {
+		node.next = new Node(value, node.next);
+		size++;
+	}
+	
+	private Node getNode(int index) {
+		Node node = head;
+		for (int i = 0; i < index && node != null; i++) {
+			node = node.next;
+		}
+		return node;
+	}
+	
+	*/
 	
 	/**
 	 * Returns the value of the first element of the list.
@@ -47,6 +71,18 @@ public class LinkedList {
 		}
 	}
 	
+	/**
+	 * Iterates through the list and prints each node's value to console.
+	 */
+	public void display() {
+		Node current = head;
+		while (current != null) {
+			System.out.print(current.data + " ");
+			current = current.next;
+		}
+		System.out.println();
+	}
+
 	/**
 	 * Nested data structure that contains the value of the node and a reference
 	 * to the next node in the LinkedList.
