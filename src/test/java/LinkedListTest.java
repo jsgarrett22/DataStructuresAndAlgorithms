@@ -29,6 +29,37 @@ class LinkedListTest {
 	}
 	
 	@Test
+	void addFirst() {
+		LinkedList list = new LinkedList();
+		// Test if head starts as null
+		// Add 5 to first node
+		list.addFirst(5);
+		assertEquals(1, list.size());
+		
+		// Add 7 to second node
+		assertTrue(list.add(7));
+		assertEquals(2, list.size());
+		
+		// Add 9 to third node
+		assertTrue(list.add(9));
+		assertEquals(3, list.size());
+		
+		// Add 11 to fourth node
+		assertTrue(list.add(11));
+		assertEquals(4, list.size());
+				
+		// Add 13 to fifth node
+		assertTrue(list.add(13));
+		assertEquals(5, list.size());
+		
+		// ASSERT DISPLAY
+		
+		// Change first node to 20
+		list.addFirst(20);
+		assertEquals(5, list.size());
+	}
+	
+	@Test
 	void sizeTest() {
 		LinkedList list = new LinkedList();
 		assertEquals(0, list.size());

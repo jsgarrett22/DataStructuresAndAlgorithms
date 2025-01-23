@@ -12,6 +12,14 @@ public class main {
 		list.add(11);
 		list.add(13);
 		list.display();
+		list.addFirst(20);
+		list.display();
+		list.addFirst(30);
+		list.addFirst(40);
+		list.addFirst(50);
+		list.addFirst(99);
+		list.display();
+		System.out.println("List size: " + list.size());
 	}
 	
 	public static String reverseString(String str) {

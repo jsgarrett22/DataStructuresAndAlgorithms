@@ -36,8 +36,24 @@ public class LinkedList {
 		return true;
 	}
 	
+	/**
+	 * Adds the value to the head of the list.
+	 * @param value the value to be at the head of the list.
+	 */
+	public void addFirst(int value) {
+		Node node = new Node(value);
+		if (head != null) {
+			Node temp = head.next;
+			node.next = temp;
+			head = node;
+		} else {
+			head = node;
+			size++;
+		}
+	}
+	
 	/*
-	 * PRIVATE HELPER METHODS taken from 
+	 * OPTIMIZED HELPER METHODS TAKEN FROM TEXT
 	 * 
 	private void addFirst(int value) {
 		head = new Node(value, head);
@@ -76,11 +92,12 @@ public class LinkedList {
 	 */
 	public void display() {
 		Node current = head;
+		System.out.print("[ ");
 		while (current != null) {
 			System.out.print(current.data + " ");
 			current = current.next;
 		}
-		System.out.println();
+		System.out.println("]\n");
 	}
 
 	/**
