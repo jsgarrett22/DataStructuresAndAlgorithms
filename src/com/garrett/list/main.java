@@ -9,15 +9,9 @@ public class main {
 		list.add(5);
 		list.add(7);
 		list.add(9);
-		list.add(11);
-		list.add(13);
 		list.display();
-		list.replaceFirst(20);
-		list.display();
-		list.replaceFirst(30);
-		list.replaceFirst(40);
-		list.replaceFirst(50);
-		list.replaceFirst(99);
+		System.out.println("List size: " + list.size());
+		list.addFirst(11);
 		list.display();
 		System.out.println("List size: " + list.size());
 	}

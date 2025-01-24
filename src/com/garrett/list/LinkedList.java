@@ -18,6 +18,7 @@ public class LinkedList {
 	
 	/**
 	 * Adds an element to the end of the list. Always returns true.
+	 * @param value the value to be added at the end of the list.
 	 */
 	public boolean add(int value) {
 		Node node = new Node(value);
@@ -37,8 +38,19 @@ public class LinkedList {
 	}
 	
 	/**
-	 * Adds the value to the head of the list.
-	 * @param value the value to be at the head of the list.
+	 * Inserts the value at the head of the list. Always returns true.
+	 * @param value the value to be added at the start of the list.
+	 */
+	public boolean addFirst(int value) {
+		Node node = new Node(value, head);
+		head = node;
+		size++;
+		return true;
+	}
+	
+	/**
+	 * Replaces the value at the head of the list.
+	 * @param value the new value to be at the head of the list.
 	 */
 	public void replaceFirst(int value) {
 		Node node = new Node(value);

@@ -29,6 +29,23 @@ class LinkedListTest {
 	}
 	
 	@Test
+	void addFirst() {
+		LinkedList list = new LinkedList();
+		// add first value of 5
+		assertTrue(list.add(5));
+		assertEquals(1, list.size());
+		assertEquals(5, list.getFirst());
+		// add second value of 7
+		assertTrue(list.add(7));
+		assertEquals(2, list.size());
+		assertEquals(5, list.getFirst());
+		// insert third value of 9 at the beginning
+		assertTrue(list.addFirst(9));
+		assertEquals(3, list.size());
+		assertEquals(9, list.getFirst());
+	}
+	
+	@Test
 	void replaceFirst() {
 		LinkedList list = new LinkedList();
 		// Test if head starts as null
