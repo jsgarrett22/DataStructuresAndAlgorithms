@@ -77,6 +77,44 @@ class LinkedListTest {
 	}
 	
 	@Test
+	void indexOfTest() {
+		LinkedList list = new LinkedList();
+		// check on an empty list
+		assertEquals(-1, list.indexOf(5));
+		
+		// Add 5 to first node
+		assertTrue(list.add(5));
+		assertEquals(1, list.size());
+				
+		// Add 7 to second node
+		assertTrue(list.add(7));
+		assertEquals(2, list.size());
+				
+		// Add 9 to third node
+		assertTrue(list.add(9));
+		assertEquals(3, list.size());
+				
+		// Add 11 to fourth node
+		assertTrue(list.add(11));
+		assertEquals(4, list.size());
+						
+		// Add 13 to fifth node
+		assertTrue(list.add(13));
+		assertEquals(5, list.size());
+		
+		// Search for the index of value '5'
+		assertEquals(0, list.indexOf(5));
+		// Search for the index of value '7'
+		assertEquals(1, list.indexOf(7));
+		// Search for the index of value '9'
+		assertEquals(2, list.indexOf(9));
+		// Search for the index of value '11'
+		assertEquals(3, list.indexOf(11));
+		// Search for the index of value '13'
+		assertEquals(4, list.indexOf(13));
+	}
+	
+	@Test
 	void sizeTest() {
 		LinkedList list = new LinkedList();
 		assertEquals(0, list.size());

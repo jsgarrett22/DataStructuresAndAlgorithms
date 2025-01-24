@@ -77,6 +77,25 @@ public class LinkedList {
 	}
 	
 	/**
+	 * Searches for the target and returns the position of the first occurrence, or -1
+	 * if it is not in the list.
+	 * @param target the value to search for in the list
+	 * @return the index of the target value if found, -1 if it is not found.
+	 */
+	public int indexOf(int target) {
+		int index = 0;
+		Node current = head;
+		while (current != null) {
+			if (current.data == target) {
+				return index;
+			}
+			current = current.next;
+			index++;
+		}
+		return -1;
+	}
+	
+	/**
 	 * Iterates through the list and prints each node's value to console.
 	 */
 	public void display() {
