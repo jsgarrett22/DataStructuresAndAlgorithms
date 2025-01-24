@@ -40,7 +40,7 @@ public class LinkedList {
 	 * Adds the value to the head of the list.
 	 * @param value the value to be at the head of the list.
 	 */
-	public void addFirst(int value) {
+	public void replaceFirst(int value) {
 		Node node = new Node(value);
 		if (head != null) {
 			Node temp = head.next;
@@ -51,29 +51,6 @@ public class LinkedList {
 			size++;
 		}
 	}
-	
-	/*
-	 * OPTIMIZED HELPER METHODS TAKEN FROM TEXT
-	 * 
-	private void addFirst(int value) {
-		head = new Node(value, head);
-		size++;
-	}
-	
-	private void addAfter(Node node, int value) {
-		node.next = new Node(value, node.next);
-		size++;
-	}
-	
-	private Node getNode(int index) {
-		Node node = head;
-		for (int i = 0; i < index && node != null; i++) {
-			node = node.next;
-		}
-		return node;
-	}
-	
-	*/
 	
 	/**
 	 * Returns the value of the first element of the list.
@@ -99,6 +76,29 @@ public class LinkedList {
 		}
 		System.out.println("]\n");
 	}
+	
+	/*
+	 * OPTIMIZED HELPER METHODS TAKEN FROM TEXT
+	 * 
+	private void addFirst(int value) {
+		head = new Node(value, head);
+		size++;
+	}
+	
+	private void addAfter(Node node, int value) {
+		node.next = new Node(value, node.next);
+		size++;
+	}
+	
+	private Node getNode(int index) {
+		Node node = head;
+		for (int i = 0; i < index && node != null; i++) {
+			node = node.next;
+		}
+		return node;
+	}
+	
+	*/
 
 	/**
 	 * Nested data structure that contains the value of the node and a reference

@@ -12,12 +12,12 @@ public class main {
 		list.add(11);
 		list.add(13);
 		list.display();
-		list.addFirst(20);
+		list.replaceFirst(20);
 		list.display();
-		list.addFirst(30);
-		list.addFirst(40);
-		list.addFirst(50);
-		list.addFirst(99);
+		list.replaceFirst(30);
+		list.replaceFirst(40);
+		list.replaceFirst(50);
+		list.replaceFirst(99);
 		list.display();
 		System.out.println("List size: " + list.size());
 	}

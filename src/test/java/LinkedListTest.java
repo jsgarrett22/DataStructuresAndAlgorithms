@@ -29,11 +29,11 @@ class LinkedListTest {
 	}
 	
 	@Test
-	void addFirst() {
+	void replaceFirst() {
 		LinkedList list = new LinkedList();
 		// Test if head starts as null
 		// Add 5 to first node
-		list.addFirst(5);
+		list.replaceFirst(5);
 		assertEquals(1, list.size());
 		
 		// Add 7 to second node
@@ -55,7 +55,7 @@ class LinkedListTest {
 		// ASSERT DISPLAY
 		
 		// Change first node to 20
-		list.addFirst(20);
+		list.replaceFirst(20);
 		assertEquals(5, list.size());
 	}
 	
