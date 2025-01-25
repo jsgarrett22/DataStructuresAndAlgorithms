@@ -1,6 +1,10 @@
 package test.java;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrowsExactly;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
@@ -112,6 +116,30 @@ class LinkedListTest {
 		assertEquals(3, list.indexOf(11));
 		// Search for the index of value '13'
 		assertEquals(4, list.indexOf(13));
+	}
+	
+	@Test
+	void getTest() {
+		LinkedList list = new LinkedList();
+		NullPointerException nullException = assertThrows(NullPointerException.class, () ->
+		list.get(0));
+		
+		IndexOutOfBoundsException exceptionOne = assertThrows(IndexOutOfBoundsException.class, () ->
+		list.get(-1));
+		assertEquals("Index of element must be >= 0 and < size of list.", exceptionOne.getMessage());
+		IndexOutOfBoundsException exceptionTwo = assertThrows(IndexOutOfBoundsException.class, () ->
+		list.get(5));
+		assertEquals("Index of element must be >= 0 and < size of list.", exceptionTwo.getMessage());
+		
+		list.add(5);
+		list.add(7);
+		list.add(9);
+		list.add(11);
+		list.add(13);
+		
+		assertEquals(5, list.get(0));
+		assertEquals(9, list.get(2));
+		assertEquals(13, list.get(4));
 	}
 	
 	@Test

@@ -77,6 +77,24 @@ public class LinkedList {
 	}
 	
 	/**
+	 * Returns the data in the element at index position
+	 * @
+	 */
+	public int get(int index) {
+		int i = 0;
+		Node current = head;
+		
+		if (index < 0 || index > size) {
+			throw new IndexOutOfBoundsException("Index of element must be >= 0 and < size of list.");
+		}
+		while (current != null && i < index) {
+			current = current.next;
+			i++;
+		}
+		return current.data;
+	}
+	
+	/**
 	 * Searches for the target and returns the position of the first occurrence, or -1
 	 * if it is not in the list.
 	 * @param target the value to search for in the list
