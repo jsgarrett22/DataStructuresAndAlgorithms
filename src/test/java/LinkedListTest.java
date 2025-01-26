@@ -143,6 +143,35 @@ class LinkedListTest {
 	}
 	
 	@Test
+	void setTest() {
+		LinkedList list = new LinkedList();
+		
+		NullPointerException nullException = assertThrows(NullPointerException.class, () ->
+		list.set(0, 5));
+		
+		IndexOutOfBoundsException exceptionOne = assertThrows(IndexOutOfBoundsException.class, () ->
+		list.set(-1, 1));
+		
+		IndexOutOfBoundsException exceptionTwo = assertThrows(IndexOutOfBoundsException.class, () ->
+		list.set(5, 10));
+		assertEquals("Index of element must be >= 0 and < size of list.", exceptionTwo.getMessage());
+		//IndexOutOfBoundsException exceptionThree = assertThrows(IndexOutOfBoundsException.class, () ->
+		//list.set(5, 10));
+		
+		list.add(5);
+		list.add(7);
+		list.add(9);
+		list.add(11);
+		list.add(13);
+		
+		assertEquals(5, list.set(0, 1));
+		assertEquals(1, list.get(0));
+		
+		assertEquals(13, list.set(4, 20));
+		assertEquals(20, list.get(4));
+	}
+	
+	@Test
 	void sizeTest() {
 		LinkedList list = new LinkedList();
 		assertEquals(0, list.size());

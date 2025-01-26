@@ -95,6 +95,39 @@ public class LinkedList {
 	}
 	
 	/**
+	 * Stores a new entry at the specified index and returns the old entry's value.
+	 * @param index the index of the old entry that will be replaced
+	 * @param entry the new entry
+	 * @return the data of the previous entry that was replaced
+	 */
+	public int set(int index, int entry) {
+		int i = 0;
+		Node current = head;
+		
+		if (index < 0 || index > size) {
+			throw new IndexOutOfBoundsException("Index of element must be >= 0 and < size of list.");
+		}
+		
+		while (current != null && i < index) {
+			current = current.next;
+			i++;
+		}
+		int oldData = current.data;
+		current.data = entry;
+		
+		return oldData;
+	}
+	
+	/**
+	 * Removes the entry at position index and returns it.
+	 * @param index the index of the entry to be removed
+	 * @return the data of the entry that was removed
+	 */
+	public int remove(int index) {
+		return 0;
+	}
+	
+	/**
 	 * Searches for the target and returns the position of the first occurrence, or -1
 	 * if it is not in the list.
 	 * @param target the value to search for in the list
