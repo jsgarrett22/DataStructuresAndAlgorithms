@@ -124,7 +124,36 @@ public class LinkedList {
 	 * @return the data of the entry that was removed
 	 */
 	public int remove(int index) {
-		return 0;
+		int i = 0;
+		int data = 0;
+		Node current = head;
+		
+		if (index < 0 || index > size) {
+			throw new IndexOutOfBoundsException("Index of element must be >= 0 and < size of list.");
+		}
+		
+		if (current == null) {
+			return 0;
+		}
+		
+		/* Remove from the head */
+		if (index == 0) {
+			data = current.data;
+			head = current.next;
+			size--;
+			return data;
+		}
+		
+		/* Remove from the middle to end */
+		while (i < index - 1) {
+			current = current.next;
+			i++;
+		}
+		data = current.next.data;
+		current.next = current.next.next;
+		size--;
+		
+		return data;
 	}
 	
 	/**

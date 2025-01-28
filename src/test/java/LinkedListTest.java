@@ -172,6 +172,59 @@ class LinkedListTest {
 	}
 	
 	@Test
+	void removeTest() {
+		LinkedList list = new LinkedList();
+		
+		/* Remove from an empty list */
+		assertEquals(0, list.remove(0));
+		
+		/* Try giving an index value < 0 */
+		assertThrows(IndexOutOfBoundsException.class, () ->
+		list.remove(-1));
+		
+		/* Try giving an index value > size */
+		assertThrows(IndexOutOfBoundsException.class, () ->
+		list.remove(100));
+		
+		list.add(5);
+		list.add(7);
+		list.add(9);
+		list.add(11);
+		list.add(13);
+		list.add(15);
+		list.add(17);
+		
+		/* Try removing from beginning */
+		assertEquals(5, list.remove(0));
+		assertEquals(6, list.size());
+		
+		/* Try removing from the head again */
+		assertEquals(7, list.remove(0));
+		assertEquals(5, list.size());
+		
+		/* Try removing from middle */
+		assertEquals(13, list.remove(2));
+		assertEquals(4, list.size());
+		
+		/* Try removing from end */
+		assertEquals(15, list.remove(2));
+		assertEquals(3, list.size());
+		
+		/* Try removing from end */
+		assertEquals(17, list.remove(2));
+		assertEquals(2, list.size());
+		
+		/* Try removing from end again */
+		assertEquals(11, list.remove(1));
+		assertEquals(1, list.size());
+		
+		/* Try removing from end again again */
+		assertEquals(9, list.remove(0));
+		assertEquals(0, list.size());
+		
+	}
+	
+	@Test
 	void sizeTest() {
 		LinkedList list = new LinkedList();
 		assertEquals(0, list.size());
