@@ -38,6 +38,34 @@ public class LinkedList {
 	}
 	
 	/**
+	 * Adds an element to the list, inserting it at position index. Always returns true.
+	 * @param index the index where the new element will be inserted
+	 * @param value the new value to be inserted 
+	 */
+	public void add(int index, int value) {
+		int i = 0;
+		Node current = head;
+		Node newNode = new Node(value);
+		
+		if (index < 0 || index > size) {
+			throw new IndexOutOfBoundsException("Index of element must be >= 0 and < size of list.");
+		}
+		
+		if (current == null) {
+			addFirst(value);
+			return;
+		}
+		
+		while (i < index - 1) {
+			current = current.next;
+			i++;
+		}
+		newNode.next = current.next;
+		current.next = newNode;
+		size++;
+	}
+	
+	/**
 	 * Inserts the value at the head of the list. Always returns true.
 	 * @param value the value to be added at the start of the list.
 	 */

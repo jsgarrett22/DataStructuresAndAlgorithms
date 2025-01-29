@@ -33,6 +33,35 @@ class LinkedListTest {
 	}
 	
 	@Test
+	void addSpecificIndexTest() {
+		LinkedList list = new LinkedList();
+		/* Try inserting at a particular index of an empty list */
+		assertEquals(0, list.size());
+		IndexOutOfBoundsException exceptionOne = assertThrows(IndexOutOfBoundsException.class, () ->
+			list.add(4, 5));
+		assertEquals(0, list.size());
+		
+		/* Try inserting a value, given a negative index */
+		IndexOutOfBoundsException exceptionTwo = assertThrows(IndexOutOfBoundsException.class, () ->
+			list.add(-1, 5));
+		assertEquals(0, list.size());
+		
+		/* Try inserting a value, given an appropriate index on an empty list */
+		list.add(0, 5);
+		assertEquals(1, list.size());
+		
+		/* Try inserting a value, given an appropriate index on a populated list */
+		list.add(7);
+		list.add(9);
+		list.add(11);
+		list.add(2, 13);
+		assertEquals(5, list.size());
+		assertEquals(13, list.get(2));
+		assertEquals(9, list.get(3));
+		assertEquals(11, list.get(4));
+	}
+	
+	@Test
 	void addFirst() {
 		LinkedList list = new LinkedList();
 		// add first value of 5
