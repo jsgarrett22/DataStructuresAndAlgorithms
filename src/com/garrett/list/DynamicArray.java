@@ -1,4 +1,4 @@
-package com.garrett;
+package com.garrett.list;
 
 public class DynamicArray {
 
