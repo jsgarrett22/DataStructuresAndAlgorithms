@@ -77,8 +77,6 @@ public class BinaryTree<E> {
 		}
 	}
 	
-	
-	
 	/**
 	 * Returns the right subtree of the binary tree.
 	 * @return the right subtree of the tree, otherwise, it returns null.
@@ -129,6 +127,23 @@ public class BinaryTree<E> {
 			parent = null;
 			leftChild = null;
 			rightChild = null;
+		}
+		
+		/**
+		 * Determines if the subtree of nodes is considered a full tree.
+		 * @return true if every node in the tree has either zero or two children.
+		 * @author Joshua S. Garrett
+		 * @version Feb 2nd, 2025
+		 */
+		public boolean isFull() {
+			// base - if node has zero childre
+			if (leftChild == null && rightChild == null) {
+				return true;
+			}
+			if (leftChild != null && rightChild != null) {
+				return leftChild.isFull() && rightChild.isFull();
+			}
+			return false;
 		}
 		
 		/**
