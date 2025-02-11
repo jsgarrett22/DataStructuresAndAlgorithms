@@ -147,6 +147,38 @@ public class BinaryTree<E> {
 		}
 		
 		/**
+		  * Returns the height of the node in a binary tree, when called on the node at the root of the tree.
+		  * @return int the current depth or level of the node
+		  * @author Joshua S. Garrett
+		  * @version Feb 2nd, 2025
+		  */
+		  public int getHeight() {
+			  // base case - single node is level 1
+			  if (leftChild == null && rightChild == null) {
+				  return 1;
+			  }
+			  
+			  // traverse left and increment if only left exists
+			  if (leftChild != null && rightChild == null) {
+				  return 1 + leftChild.getHeight();
+			  }
+			  // traverse right and increment if only right exists
+			  if (leftChild == null && rightChild != null) {
+				  return 1 + rightChild.getHeight();
+			  } else {
+				  // traverse both left and right if they are both not null
+				  int leftHeight = leftChild.getHeight();
+				  int rightHeight = rightChild.getHeight();
+				  // return the bigger height of the two
+				  if (leftHeight == rightHeight || leftHeight > rightHeight) {
+					  return 1 + leftHeight;
+				  } else {
+					  return 1 + rightHeight;
+				  }
+			  }
+		  }
+		
+		/**
 		 * Return a string representation of the node.
 		 * @return a string representation of data
 		 */
